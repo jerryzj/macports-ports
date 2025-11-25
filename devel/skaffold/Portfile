@@ -3,11 +3,11 @@
 PortSystem          1.0
 PortGroup           github 1.0
 
-github.setup        GoogleContainerTools skaffold 2.15.0 v
+github.setup        GoogleContainerTools skaffold 2.17.0 v
 revision            0
 
 categories          devel
-maintainers         {breun.nl:nils @breun} openmaintainer
+maintainers         {breun @breun} openmaintainer
 platforms           darwin
 license             Apache-2
 
@@ -22,9 +22,9 @@ homepage            https://skaffold.dev
 
 github.tarball_from archive
 
-checksums           rmd160  7fa8afd77bfc5ff2c57dd2b894376efb866ec6c2 \
-                    sha256  e4ed90073d89460bb028742e8c79154366b0980da610faaf8aa0c2e1f025b2e3 \
-                    size    63245312
+checksums           rmd160  4d517d1da1b2706c6a4bf80fe3f3e7f76b940b50 \
+                    sha256  c3b76c2964e77f90d3514981a03f9618856bc85de34e98dc0716f65d40036e4b \
+                    size    64908690
 
 depends_build       port:go
 

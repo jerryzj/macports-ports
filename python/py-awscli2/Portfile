@@ -6,7 +6,7 @@ PortGroup           select 1.0
 PortGroup           github 1.0
 
 name                py-awscli2
-github.setup        aws aws-cli 2.25.1
+github.setup        aws aws-cli 2.31.33
 github.tarball_from archive
 revision            0
 
@@ -21,12 +21,11 @@ long_description    {*}${description}
 
 homepage            https://aws.amazon.com/cli/
 
-checksums           rmd160  6e21d889f6eb49cad0e1e15a5a3e8328a4fd337b \
-                    sha256  a4a920714ce5e97a9aa7721295342fd9eba448c8da6cf3b22f4a2d2e8cb136c1 \
-                    size    16169434
+checksums           rmd160  5e7230de85c15fb3a6683cdd8e3626cad1365d4c \
+                    sha256  1e48feda874ece17b4eeda7530f259cf51a0f17e4312d2b74640125e99efd80f \
+                    size    17042309
 
-python.versions     39 310 311 312 313
-python.pep517       yes
+python.versions     310 311 312 313
 python.pep517_backend \
                     flit
 
@@ -39,7 +38,6 @@ if {${name} ne ${subport}} {
     depends_lib-append \
                         port:py${python.version}-awscrt \
                         port:py${python.version}-colorama \
-                        port:py${python.version}-cryptography \
                         port:py${python.version}-dateutil \
                         port:py${python.version}-distro \
                         port:py${python.version}-docutils \

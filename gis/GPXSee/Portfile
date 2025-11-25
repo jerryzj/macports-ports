@@ -4,13 +4,13 @@ PortSystem          1.0
 PortGroup           github 1.0
 PortGroup           qmake5 1.0
 
-github.setup        tumic0 GPXSee 13.39
+github.setup        tumic0 GPXSee 15.3
 github.tarball_from archive
 revision            0
 
-checksums           rmd160  0f13429e8676ee7d6c704b699d6029a3986c9362 \
-                    sha256  e7eb8c6d487f7f7705cb0276bfd3c3aadf77a1fe1cd2a28ea547bbeb1c73a152 \
-                    size    5877816
+checksums           rmd160  d35854e2bbb1b169919ac32d9818643483112a68 \
+                    sha256  655df0b4401632aadbc6acb67dafd3dc2b171db329a08a1acfdce984bfb049be \
+                    size    6558953
 
 categories          gis graphics
 license             GPL-3
@@ -30,7 +30,7 @@ qt5.depends_runtime_component   qtimageformats qttranslations
 
 compiler.cxx_standard 2011
 
-depends_run-append  port:QtPBFImagePlugin
+depends_lib-append  port:zlib
 
 post-configure {
     system -W ${worksrcpath} "${qt_lrelease_cmd} gpxsee.pro"

@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 PortGroup           github 1.0
 
-github.setup        rocky python-xdis 6.1.3
+github.setup        rocky python-xdis 6.1.8
 github.tarball_from archive
 name                py-xdis
 revision            0
@@ -25,13 +25,21 @@ long_description \
     of these formats like ``extended`` and ``extended-format`` are the most \
     advanced of any Python disassembler.
 
-checksums           rmd160  16a295af566397ee1f384d6f3dc47a39030f2dff \
-                    sha256  9a081b78d0211a1f76a3258046456d5ff66daa212e3575c185b2d0a5fba32362 \
-                    size    362283
+checksums           rmd160  a645e9b20375c20c47b860f566829db7ffba0d49 \
+                    sha256  404c31baba6f3fb93e5434009bd1cc4466b289a8e7374a6ba2f2ecd17a31da98 \
+                    size    553575
 
-python.versions     39 310 311 312 313
+python.versions     310 311 312 313 314
 
 if {${name} ne ${subport}} {
+    if {${python.version} == 310} {
+        distname    xdis_36-${version}
+        revision    0
+        checksums   rmd160  a645e9b20375c20c47b860f566829db7ffba0d49 \
+                    sha256  404c31baba6f3fb93e5434009bd1cc4466b289a8e7374a6ba2f2ecd17a31da98 \
+                    size    553575
+    }
+
     depends_lib-append  port:py${python.version}-click \
                         port:py${python.version}-six
 

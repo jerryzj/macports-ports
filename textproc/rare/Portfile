@@ -3,7 +3,7 @@
 PortSystem          1.0
 PortGroup           golang 1.0
 
-go.setup            github.com/zix99/rare 0.4.3
+go.setup            github.com/zix99/rare 0.5.3
 go.package          rare
 go.offline_build    no
 revision            0
@@ -22,9 +22,9 @@ license             GPL-3
 maintainers         {gmail.com:herby.gillot @herbygillot} \
                     openmaintainer
 
-checksums           rmd160  b4135744fcda5969d321512ffdb97e19a530cf7e \
-                    sha256  5d3d3bcc984efe1d7259c133ace2c3da5475cbefb747edf03093cf2c5e4cfdb9 \
-                    size    2604898
+checksums           rmd160  6da2352cbc2a77e5efaf736046c1e824390f66ad \
+                    sha256  4324492650a4f8dace85a55a1d152d5728f3861f0dfb1f7ffe9bb002f853acec \
+                    size    3133817
 
 build.pre_args-append \
     -ldflags    \" -X main.version=${version} \" \

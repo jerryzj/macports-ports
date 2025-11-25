@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           perl5 1.0
 
 perl5.branches      5.28 5.30 5.32 5.34
-perl5.setup         Dist-Build 0.019 ../../authors/id/L/LE/LEONT
+perl5.setup         Dist-Build 0.021 ../../authors/id/L/LE/LEONT
 revision            0
 license             {Artistic-1 GPL}
 maintainers         {devans @dbevans} openmaintainer
@@ -14,9 +14,9 @@ long_description    {*}${description}
 platforms           {darwin any}
 supported_archs     noarch
 
-checksums           rmd160  55cb4c025b3089b2e47873b94f425f7bf42ab367 \
-                    sha256  29c3140c0640a276f8bccfc8d6e834ed3ab9a3fa4bcf960d807337eaf004d628 \
-                    size    31081
+checksums           rmd160  f1754e1d3d3261a694015243fcc8a0a713f419ef \
+                    sha256  1df004ae86330972b074a47098b9f078517ac82c719d24eee44b9cdc4918db2a \
+                    size    31214
 
 if {${perl5.major} != ""} {
     depends_build-append \

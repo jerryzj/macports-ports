@@ -4,7 +4,8 @@ PortSystem              1.0
 PortGroup               cmake 1.1
 PortGroup               github 1.0
 
-github.setup            jupyter-xeus xeus 5.2.2
+github.setup            jupyter-xeus xeus 5.2.5
+github.tarball_from     archive
 revision                0
 categories              devel science
 license                 BSD
@@ -15,13 +16,9 @@ long_description        {*}${description} It takes the burden of implementing th
                         Jupyter Kernel protocol so developers can focus on implementing \
                         the interpreter part of the kernel.
 
-# Change github.tarball_from to 'releases' or 'archive' next update
-# Unfortunately, neither of these options work
-github.tarball_from     tarball
-
-checksums               rmd160  d55679bb9e241d14de21fd2deca8e1351537e076 \
-                        sha256  82a49d2b40be689205bf00c43a7723feb304ec22f9f0c5c7fd647b80cecaacc6 \
-                        size    9048483
+checksums               rmd160  30f19fb37af3f16243d46d24d3233341e069c8c2 \
+                        sha256  6dbec6ef70300b7950c0c8ed5db8236a7dab76be856bc5d6b642a3b424c7ade4 \
+                        size    9049074
 
 # fatal error: 'any' file not found
 compiler.cxx_standard   2017

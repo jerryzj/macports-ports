@@ -5,18 +5,17 @@ PortGroup           python 1.0
 
 python.add_dependencies no
 name                py-htmldocs
-python.versions     27 37 310 311 312 313
+python.versions     27 310 311 312 313
 version             1.0
 revision            0
 license             PSF
 
 if {$subport != $name} {
     if {${python.version} == 27} { version 2.7.18 }
-    if {${python.version} == 37} { version 3.7.17 }
-    if {${python.version} == 310} { version 3.10.17 }
-    if {${python.version} == 311} { version 3.11.12 }
-    if {${python.version} == 312} { version 3.12.10 }
-    if {${python.version} == 313} { version 3.13.3 }
+    if {${python.version} == 310} { version 3.10.19 }
+    if {${python.version} == 311} { version 3.11.14 }
+    if {${python.version} == 312} { version 3.12.12 }
+    if {${python.version} == 313} { version 3.13.9 }
 }
 
 categories          lang
@@ -55,37 +54,29 @@ if {${name} != ${subport}} {
         size    4634932
     }
 
-    if {${python.version} == 37} {
-        checksums   rmd160  bd9a72a9a39d7310b7893f96fab6a46fd71ea398 \
-                    sha256  c7a14f1fd990476e9b06d3163ebad26c6c5592c8a4cc6d1e98a25048bc95ec08 \
-                    size    6296352
-    }
-
     if {${python.version} == 310} {
-        checksums   rmd160  184f2cb07c66bea074f216ca89a93bc6eaa226a7 \
-                    sha256  34a0453ddb426be856f1c5fcda37ac01068fea3af79f5b26ba209f5832c0a849 \
-                    size    7459592
+        checksums   rmd160  17b69da150c596fe8a82bcddcc85ab9119282a76 \
+                    sha256  fd4f81b300fee7254897acc1a4a8452c6ae1fc087845cc327db173373c527830 \
+                    size    7453972
     }
 
     if {${python.version} == 311} {
-        checksums   rmd160  a1f12af5edaf72ae7377739553071a5d617ec096 \
-                    sha256  43eb8c160873d3f0d4966962862273496f62409ab02b3a3a3f563f930066325b \
-                    size    7994774
+        checksums   rmd160  d05e5cffdb1d48483ad8bb8e0c6abb988d15715b \
+                    sha256  706bc8613eccdc76424d7a590adf36793623f7bfbf480260812a581a575cbae8 \
+                    size    8011943
     }
 
     if {${python.version} == 312} {
-        checksums   rmd160  a8ad18cf39c691f90e1953563f6eaffa42a50d80 \
-                    sha256  16347781a36c25042c3b0472cdc25a952ee3ecf1953c8448a854dc83763ebbb0 \
-                    size    8428154
+        checksums   rmd160  2152f17e99501e91bcdee6a49f6b8e9dd0739287 \
+                    sha256  93d20d849a8931c2e9e1fd1b0d32646c154b867751ca4080c905c810815a4fa9 \
+                    size    8444609
     }
 
     if {${python.version} == 313} {
-        checksums   rmd160  d5dc114887997f60e4eb33c8fc8f0b9a2377ca2a \
-                    sha256  8ad1af833fc455d09837ab85a83e84502c7f6e7be34d31295330b4f640897cbe \
-                    size    10354611
+        checksums   rmd160  d0b3deed595b553fc51a04f41c323e00caffb767 \
+                    sha256  0db85437c2de31a8ee7e5f02a7ba90ed6e10ba90ba265cbd783a1818de432e40 \
+                    size    10368030
     }
-
-    dist_subdir         ${name}/${revision}
 
     build {}
 

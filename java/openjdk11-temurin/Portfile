@@ -5,7 +5,7 @@ PortSystem       1.0
 set feature 11
 name             openjdk${feature}-temurin
 categories       java devel
-maintainers      {breun.nl:nils @breun} openmaintainer
+maintainers      {breun @breun} openmaintainer
 
 # JVMMinimumSystemVersion in Contents/Info.plist is set to macOS 10.12 for x86_64:
 # /usr/libexec/PlistBuddy -c "Print :JavaVM:JVMMinimumSystemVersion" Contents/Info.plist
@@ -20,8 +20,8 @@ universal_variant no
 # https://adoptium.net/temurin/releases/?os=mac&version=11
 supported_archs  x86_64 arm64
 
-version      ${feature}.0.27
-set build    6
+version      ${feature}.0.29
+set build    7
 revision     0
 
 # See https://adoptium.net/support/ for end of support date
@@ -31,16 +31,20 @@ long_description Eclipse Temurin provides secure, TCK-tested and compliant, prod
 master_sites https://github.com/adoptium/temurin${feature}-binaries/releases/download/jdk-${version}%2B${build}/
 
 if {${configure.build_arch} eq "x86_64"} {
-    distname     OpenJDK${feature}U-jdk_x64_mac_hotspot_${version}_${build}
-    checksums    rmd160  306d2fad65baf21067a6fae1b7a4f7d3a0c7f811 \
-                 sha256  805d225d46eab5702bf2f654856d846f426bebf6f143e5f06c8b1397855252e5 \
-                 size    187806165
+    set arch_classifier x64
+    checksums    rmd160  8dadd32a4c2ad61203831504ee4f78157523c8ee \
+                 sha256  4bad4982a355b6996e5ebe92b4c7e33bb4ba92ea0ea0fe274cbc994918ce86ff \
+                 size    187208334
 } elseif {${configure.build_arch} eq "arm64"} {
-    distname     OpenJDK${feature}U-jdk_aarch64_mac_hotspot_${version}_${build}
-    checksums    rmd160  e25d8872549d7f3e331f741f474db550d805cab2 \
-                 sha256  780ae402dcd93fea0fee10d02dcd0a0b72cb7298f2ef4dddbad4d54c31a40a4d \
-                 size    185102522
+    set arch_classifier aarch64
+    checksums    rmd160  e0a777bb7accd842dd3a592c121a538fb4855fea \
+                 sha256  c6dd4f100ca6953db86470349e762db20903da5ca275b902390352e7dd4b8e0c \
+                 size    184562095
+} else {
+    set arch_classifier unsupported_arch
 }
+
+distname     OpenJDK${feature}U-jdk_${arch_classifier}_mac_hotspot_${version}_${build}
 
 worksrcdir   jdk-${version}+${build}
 

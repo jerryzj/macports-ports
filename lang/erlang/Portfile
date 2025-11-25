@@ -2,14 +2,14 @@
 
 PortSystem          1.0
 PortGroup           wxWidgets 1.0
-PortGroup           compiler_blacklist_versions 1.0
 PortGroup           legacysupport 1.1
+PortGroup           compiler_blacklist_versions 1.0
 
 # strndup, TARGET_OS_OSX
 legacysupport.newest_darwin_requires_legacy 10
 
 name                erlang
-version             27.3.2
+version             28.1.1
 revision            0
 
 set doc_version     ${version}
@@ -46,17 +46,17 @@ distfiles           otp_src_${version}${extract.suffix}                    \
                     otp_doc_html_${doc_version}${extract.suffix}
 
 checksums           otp_src_${version}.tar.gz \
-                    rmd160  832cb2bea4c43f7bbb13bbc0c20f23c3e63e5852 \
-                    sha256  7997a0900d149c82ae3d0f523d7dfa960ac3cd58acf0b158519c108eb5c65661 \
-                    size    101464740 \
+                    rmd160  43f4007cead170a0ae2898dd894cf9d049d1c378 \
+                    sha256  03e1b26e846b2cc1b49271656da6d5ecf4d5f4c2e34224d869a23c61a3d5660a \
+                    size    104587348 \
                     otp_doc_man_${doc_version}.tar.gz \
-                    rmd160  7afcd072596a7b591a48794cd3cb03df3348951d \
-                    sha256  3d05f15e226cb447e031e71f541ac7a39351bdb55c2a1929ca37dbfe111872d4 \
-                    size    45128 \
+                    rmd160  67329a373e3250442d91ca2dd2e055c0986102d3 \
+                    sha256  90a7e5d84285d1b3487a869edeacba16dd0d3a6cdd33c0f910949a256c7c6c81 \
+                    size    45185 \
                     otp_doc_html_${doc_version}.tar.gz \
-                    rmd160  a48b22ba119e8a2f217aa6188e2ff3a85ce1cfbc \
-                    sha256  eef65d2a8cef838640fb4367d657615cac22cd4f2d5c44284943dc714fb1548f \
-                    size    26081286
+                    rmd160  605ec837cd3d224bb6fd2f7ce2ab0cd733919e42 \
+                    sha256  d54bcc53b8ed0537d5595fca06beba5b3220b869aaeab41c1a40d9a21af892c7 \
+                    size    26640642
 
 worksrcdir          otp_src_${version}
 
@@ -121,8 +121,8 @@ platform darwin {
     }
 
     # asmjit fix for Sonoma annoying popup with JIT on amd64
-    # Upstream didn't want to include it yet
-    patchfiles-append           patch-asmjit-dualmap.diff
+    # Upstream included it but forgot to enable JIT on amd64
+    patchfiles-append           patch-enable-jit-x86.diff
 }
 
 # FIXME: allow building with wxGTK on older systems.
@@ -141,6 +141,8 @@ variant ssl description {Build SSL support} {
     openssl.branch              3
     configure.args-delete       --without-ssl
     configure.args-append       --with-ssl=[openssl::install_area]
+
+    depends_lib-append          port:zlib
     configure.ldflags-append    -lz
 }
 

@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           perl5 1.0
 
 perl5.branches      5.28 5.30 5.32 5.34
-perl5.setup         Type-Tiny 2.008001 ../../authors/id/T/TO/TOBYINK
+perl5.setup         Type-Tiny 2.008005 ../../authors/id/T/TO/TOBYINK
 revision            0
 license             {Artistic-1 GPL}
 maintainers         nomaintainer
@@ -14,9 +14,9 @@ long_description    {*}${description}
 platforms           {darwin any}
 supported_archs     noarch
 
-checksums           rmd160  53c373cc60e5d75397036e4984dda06fe3e3d7e0 \
-                    sha256  4afbe3a25b0e1e58c8a5d818c693856f9cb8919b98618721cb9b20ab25f8f4e0 \
-                    size    500251
+checksums           rmd160  86c9f2e56cc8ea7f25a8ca0b39577170ff246e39 \
+                    sha256  ec8ebbf710d1b76efee7fd3b3d9fc6f242f7632a4a5020e54a39d95cb18ea94e \
+                    size    502458
 
 if {${perl5.major} != ""} {
     depends_build-append \

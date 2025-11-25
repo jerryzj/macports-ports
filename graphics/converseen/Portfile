@@ -9,13 +9,12 @@ if {(${os.platform} eq "darwin" && ${os.major} > 13) \
     || ${os.platform} ne "darwin"} {
     PortGroup       qt5 1.0
 
-    github.setup    Faster3ck converseen 0.14.0.0 v
-    # Change github.tarball_from to 'releases' or 'archive' next update
-    github.tarball_from tarball
+    github.setup    Faster3ck converseen 0.15.1.2 v
+    github.tarball_from archive
     revision        0
-    checksums       rmd160  d2124036c6ba27a7a50d4c3e50f47ff690c58457 \
-                    sha256  cccdf39d12dcdfc97e8b37500568c212c4f065cab699d9cd605bd0053a864cc7 \
-                    size    962326
+    checksums       rmd160  7bdd4f0f1c56bb8c6803b283651be6aec17c3a71 \
+                    sha256  6ab3181603d246c5c2ad5817920b798df9d66377af3ef85164ba4aaf18376c3b \
+                    size    972579
 
     qt5.depends_component \
                     qttools
@@ -26,7 +25,6 @@ if {(${os.platform} eq "darwin" && ${os.major} > 13) \
 
     # Version for legacy systems using Qt4.
     github.setup    Faster3ck converseen 0.9.2 v
-    # Change github.tarball_from to 'releases' or 'archive' next update
     github.tarball_from tarball
     revision        0
     checksums       rmd160  8fb30774f2105641c864fd5d828dc51bb218eb7c \

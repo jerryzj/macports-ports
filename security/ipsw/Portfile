@@ -7,7 +7,7 @@ PortGroup               golang 1.0
 # maintains a release schedule. Update every 5th release, unless
 # a hotfix is necessary, only.
 
-go.setup                github.com/blacktop/ipsw 3.1.595 v
+go.setup                github.com/blacktop/ipsw 3.1.635 v
 revision                0
 categories              security devel
 license                 MIT
@@ -21,9 +21,9 @@ long_description        {*}${description}. Everything you need to start \
 
 homepage                https://blacktop.github.io/ipsw
 
-checksums               rmd160  bd6747caec9e4daaef996fbb98a994218a9cf6ca \
-                        sha256  d9215302c4aa4f6dcaaa956351e4f2a7357c05b4757b8e18bca1ee6a34495a92 \
-                        size    12762550
+checksums               rmd160  3be677ff86bfe72a84c685853f540923fd39fe61 \
+                        sha256  8f5a2e485332421d7d8aeb9a93545ee8416bf1dfd4e2a80f39265b1eaec86556 \
+                        size    14127450
 
 depends_build-append    path:bin/pkg-config:pkgconfig
 
